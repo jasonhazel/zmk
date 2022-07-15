@@ -1,0 +1,8 @@
+file_format: "1"
+id: dilly
+name: Keeb.io Dilly
+type: shield
+url: https://keeb.io/products/dilly-3x10-ortholinear-keyboard-for-kailh-choc-low-profile-switches
+required: [pro_micro]
+features:
+  - keys
