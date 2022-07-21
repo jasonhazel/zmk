@@ -1,4 +1,7 @@
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
 if SHIELD_DILLY
-  config ZMK_KEYBOARD_NAME
-    default "Keeb.io Dilly"
+config ZMK_KEYBOARD_NAME
+    default "Dilly"
 endif
