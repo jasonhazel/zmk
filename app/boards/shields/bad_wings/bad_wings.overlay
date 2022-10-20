@@ -9,8 +9,12 @@
 &xiao_serial { status = "disabled"; };
 
 &xiao_spi {
+    sck-pin = <8>;
+    mosi-pin = <10>;
+    miso-pin = <9>;
+
     status = "okay";
-    cs-gpios = <&xiao_d 6 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&xiao_d 6 GPIO_ACTIVE_LOW>, <&xiao_d 7 GPIO_ACTIVE_LOW> ;
     shifter: 595@0 {
         compatible = "zmk,gpio-595";
         status = "okay";
@@ -20,6 +24,17 @@
         label = "74HC595";
         #gpio-cells = <2>;
         ngpios = <8>;
+    };
+    trackpad@1 {
+        compatible = "cirque,pinnacle";
+        label="trackpad";
+        status = "okay";
+        reg = <1>;
+        spi-max-frequency = <10000000>;
+        dr-gpios = <&xiao_d 5 GPIO_ACTIVE_HIGH>;
+        invert-x;
+        sleep;
+        /* no-taps; */
     };
 };
 
